@@ -1,0 +1,7 @@
+{
+    "resource" : "https://database.windows.net",
+    "tenant" : "-",
+    "authorityHostUrl" : "https://login.microsoftonline.com",
+    "clientId" : "-",
+    "clientSecret" : "-"
+}
