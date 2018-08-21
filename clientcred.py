@@ -45,8 +45,7 @@ token = context.acquire_token_with_client_credentials(
 ### Main logic ends
 
 #print(json.dumps(token, indent=2))
-accessToken = json.loads(json.dumps(token))
-print(accessToken["accessToken"])
+accessToken = token["accessToken"]
 
 SQL_COPT_SS_ACCESS_TOKEN = 1256 
 
