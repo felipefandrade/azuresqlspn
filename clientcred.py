@@ -27,8 +27,6 @@ else:
 
 authority_url = (sample_parameters['authorityHostUrl'] + '/' +
                  sample_parameters['tenant'])
-#GRAPH_RESOURCE = '55ea4cf8-b0c0-4b89-a037-7e4d5de31f89'
-#RESOURCE = sample_parameters.get('resource', GRAPH_RESOURCE)
 
 #uncomment for verbose log
 #turn_on_logging()
@@ -49,7 +47,7 @@ accessToken = token["accessToken"]
 
 SQL_COPT_SS_ACCESS_TOKEN = 1256 
 
-connString = "Driver={ODBC Driver 17 for SQL Server};SERVER=azadmin.database.windows.net;DATABASE=paymenthub"
+connString = "Driver={ODBC Driver 17 for SQL Server};SERVER=yoursqldb.database.windows.net;DATABASE=yourdb"
 
 tokenb = bytes(accessToken["accessToken"], "UTF-8")
 
