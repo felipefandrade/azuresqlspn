@@ -71,4 +71,4 @@ while row:
     print (str(row[0]) + " " + str(row[1]))
     row = cursor.fetchone()
 ```
-I hope this helps someone looking for help with this matter.
+I hope this helps someone looking for help with this matter. Solution now in the official ADAL Wiki Page: https://github.com/AzureAD/azure-activedirectory-library-for-python/wiki/Connect-to-Azure-SQL-Database
