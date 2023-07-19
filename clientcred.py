@@ -49,12 +49,7 @@ SQL_COPT_SS_ACCESS_TOKEN = 1256
 
 connString = "Driver={ODBC Driver 17 for SQL Server};SERVER=yoursqldb.database.windows.net;DATABASE=yourdb"
 
-tokenb = bytes(accessToken["accessToken"], "UTF-8")
-
-exptoken = b'';
-for i in tokenb:
- exptoken += bytes({i});
- exptoken += bytes(1);
+exptoken = b''.join(b.to_bytes(2,'little') for b in bytes(accessToken['accessToken'], 'utf-8'))
 tokenstruct = struct.pack("=i", len(exptoken)) + exptoken;
 
 conn = pyodbc.connect(connString, attrs_before = { SQL_COPT_SS_ACCESS_TOKEN:tokenstruct});
