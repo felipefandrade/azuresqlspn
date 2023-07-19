@@ -53,10 +53,7 @@ To give an end-to-end description, if the JSON response containing the token fro
 SQL_COPT_SS_ACCESS_TOKEN = 1256 
 connString = "Driver={ODBC Driver 17 for SQL Server};SERVER=yoursqlserver.database.windows.net;DATABASE=yourdatabase"
 tokenb = bytes(token["accessToken"], "UTF-8")
-exptoken = b'';
-for i in tokenb:
- exptoken += bytes({i});
- exptoken += bytes(1);
+exptoken = b''.join(b.to_bytes(2,'little') for b in bytes(token["accessToken"],'utf-8'))
 tokenstruct = struct.pack("=i", len(exptoken)) + exptoken;
 ```
 The connection String should look like this:
